@@ -1,9 +1,9 @@
 <script setup>
+  import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <span class="text-red-500 text-6xl">Hello world</span>
+  <div class="h-full w-full">
+    <RouterView />
+  </div>
 </template>
-
-<style scoped>
-</style>
