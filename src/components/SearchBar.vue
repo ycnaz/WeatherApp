@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 
-const API_KEY = 'acf241c8159f484bbd5165255241007'
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY
 const city_name = ref('');
 const data = ref(null)
 
@@ -17,7 +17,6 @@ async function search() {
     console.log(error)
   }
 }
-
 </script>
 
 <template>
