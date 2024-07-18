@@ -19,21 +19,12 @@ async function search() {
 }
 </script>
 
+<!-- //cdn.weatherapi.com/weather/64x64/day/113.png -->
+
 <template>
-    <div class="p-5">
-        <form @submit.prevent="search()">
-            <input type="text" v-model="city_name" class="bg-indigo-300 border-none rounded-lg">
+    <div class="w-full">
+        <form @submit.prevent="search()" class="w-full">
+            <input type="text" v-model="city_name" placeholder="Search for cities..." class="bg-sky-600 bg-opacity-50 py-3 text-xl text-white placeholder:text-gray-200 border-none rounded-lg shadow-md w-full">
         </form>
-        <div>
-            <div v-if="data">
-                <span>
-                    {{ data.location.name }}
-                </span>
-                <span>
-                    {{ data.current.temp_c }}
-                </span>
-            </div>
-            <span v-else>No data</span>
-        </div>
     </div>
 </template>
