@@ -17,7 +17,7 @@ const formatDate = (date) => {
 </script>
 
 <template>
-    <div class="w-[600px] h-auto max-h-96 bg-sky-600 bg-opacity-50 rounded-lg shadow-md text-white">
+    <div class="flex grow w-auto max-w-[600px] h-auto max-h-96 bg-sky-600 bg-opacity-50 rounded-lg shadow-md text-white">
         <div class="flex flex-col w-full h-full p-5">
             <h1>3-DAY FORECAST</h1>
             <div v-if="data" class="flex flex-col grow">
@@ -29,7 +29,7 @@ const formatDate = (date) => {
                     </div>
                     <div>
                         <span>{{ isCelsius ? day.day.maxtemp_c : day.day.maxtemp_f }}&deg;/</span>
-                        <span class="text-gray-300">{{ isCelsius ? day.day.maxtemp_c : day.day.maxtemp_f }}&deg;</span>
+                        <span class="text-gray-300">{{ isCelsius ? day.day.mintemp_c : day.day.mintemp_f }}&deg;</span>
                     </div>
                 </div>
             </div>

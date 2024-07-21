@@ -8,6 +8,15 @@ const axiosInstance = axios.create({
 })
 
 export const apiService = {
+    async fetchWeatherLocations(query) {
+        try {
+          const response = await axiosInstance.get(`/search.json?key=${API_KEY}&q=${query}`);
+          return response.data;
+        } catch (error) {
+          console.error('API Error:', error);
+          throw error;
+        }
+    },
     async fetchCurrentWeatherData(location) {
         try {
             const response = await axiosInstance.get(`/current.json?key=${API_KEY}&q=${location}`);

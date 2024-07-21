@@ -15,8 +15,8 @@ const loading = computed(() => weatherStore.isLoading)
 </script>
 
 <template>
-    <div v-if="!loading" class="flex gap-x-5 ml-5 min-w-max">
-      <div class="flex flex-col w-full h-full">
+    <div v-if="!loading" class="flex grow max-w-screen gap-x-5 ml-5">
+      <div class="flex flex-col grow max-w-[1100px]">
         <SearchBar />
         <HeaderData />
         <TodayForecast />

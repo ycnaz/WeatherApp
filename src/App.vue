@@ -23,7 +23,7 @@
 </script>
 
 <template>
-  <div class="h-full w-full relative">
+  <div class="h-screen w-screen relative flex">
     <img src="./assets/images/sky.jpg" class="absolute w-full h-full mix-blend-color-burn">
     <div class="h-full w-full flex p-5 z-10">
       <nav class="flex flex-col bg-sky-600 bg-opacity-50 rounded-lg shadow-md z-20">
@@ -38,8 +38,8 @@
           <LocationComp class="w-10 h-10 group-hover:scale-125 transition-all duration-300" />
           <div class="group-hover:scale-100 absolute w-auto p-2 m-2 min-w-max left-[70px] bg-sky-700 rounded-lg text-white shadow-md transition-all duration-100 scale-0 origin-left">Cities</div>
         </div>
-        <div class="group flex justify-center items-center w-16 h-16 m-2 rounded-lg hover:bg-sky-700 relative transition-all duration-300 cursor-pointer">
-          <span @click="toggleScaleHandler" class="text-white text-5xl">{{ tempStore.celsius ? 'C' : 'F' }}</span>
+        <div @click="toggleScaleHandler" class="group flex justify-center items-center w-16 h-16 m-2 rounded-lg hover:bg-sky-700 relative transition-all duration-300 cursor-pointer">
+          <span class="text-white text-5xl">{{ tempStore.celsius ? 'C' : 'F' }}</span>
           <div class="group-hover:scale-100 absolute w-auto p-2 m-2 min-w-max left-[70px] bg-sky-700 rounded-lg text-white shadow-md transition-all duration-100 scale-0 origin-left">{{ tempStore.celsius ? 'Celsius' : 'Fahrenheit' }}</div>
         </div>
         <div @click="settingToast" class="group flex justify-center items-center mt-auto w-16 h-16 m-2 rounded-lg hover:bg-sky-700 relative transition-all duration-300 cursor-pointer">
@@ -47,7 +47,7 @@
           <div class="group-hover:scale-100 absolute w-auto p-2 m-2 min-w-max left-[70px] bg-sky-700 rounded-lg text-white shadow-md transition-all duration-100 scale-0 origin-left">Settings</div>
         </div>
       </nav>
-      <RouterView class="z-10" />
+      <RouterView class="z-10 flex grow" />
     </div>
   </div>
 </template>

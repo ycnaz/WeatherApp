@@ -19,7 +19,7 @@ const formatHour = (rawTime) => {
 </script>
 
 <template>
-    <div class="flex flex-col bg-sky-600 bg-opacity-50 max-w-[900px] overflow-x-scroll overflow-y-hidden h-auto max-h-64 rounded-lg shadow-md py-5 text-white scroll-smooth">
+    <div class="flex flex-col bg-sky-600 bg-opacity-50 w-[1100px] overflow-x-scroll scrollbar scrollbar-thumb-sky-600 scrollbar-track-sky-800 overflow-y-hidden h-auto max-h-64 rounded-lg shadow-md py-5 text-white scroll-smooth">
         <h1 class="pl-5">TODAY'S FORECAST</h1>
         <div v-if="data" class="flex">
             <div v-for="(hour, index) in data.forecast.forecastday[0].hour" :key="hour.time_epoch" :class="['flex flex-col w-32 h-40 flex-shrink-0 items-center justify-center hover:bg-sky-700 transition-all', index < data.forecast.forecastday[0].hour.length - 1 ? 'border-r border-white' : '']">
