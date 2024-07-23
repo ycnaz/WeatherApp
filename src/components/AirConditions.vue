@@ -17,7 +17,7 @@ const data = computed(() => weatherStore.current)
 </script>
 
 <template>
-    <div class="flex flex-col bg-sky-600 bg-opacity-50 p-5 rounded-lg shadow-md text-white mt-5 grow">
+    <div class="flex flex-col bg-sky-600 bg-opacity-35 p-5 rounded-lg shadow-md text-white mt-5 grow">
         <div class="flex">
             <h1>AIR CONDITIONS</h1>
         </div>
@@ -28,7 +28,7 @@ const data = computed(() => weatherStore.current)
                         <TemperatureComp class="w-7 h-7" />
                         <span class="text-gray-300 text-xl">Real feel</span>
                     </div>
-                    <span class="text-3xl pl-9">{{ isCelsius ? data.current.feelslike_c : data.current.feelslike_f }}&deg;</span>
+                    <span class="text-3xl pl-9">{{ Math.round(isCelsius ? data.current.feelslike_c : data.current.feelslike_f) }}&deg;</span>
                 </div>
                 <div class="flex flex-col grow px-5">
                     <div class="flex items-center gap-x-2">

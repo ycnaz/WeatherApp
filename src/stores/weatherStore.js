@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { apiService } from '../api/apiService';
 
 export const useWeatherStore = defineStore('weatherStore', () => {
@@ -9,6 +9,9 @@ export const useWeatherStore = defineStore('weatherStore', () => {
     const forecastLoading = ref(false)
     const error = ref(null)
     const forecastError = ref(null)
+
+    const randomize = Math.floor(Math.random() * 9)
+    const initFetchCities = ['new-york', 'istanbul', 'tokyo', 'berlin', 'moscow', 'sydney', 'paris', 'barcelona', 'dubai']
 
     const fetchCurrentWeatherData = async (location) => {
         isLoading.value = true
@@ -38,6 +41,16 @@ export const useWeatherStore = defineStore('weatherStore', () => {
         }
     }
 
+    const refreshDataWhenError = () => {
+        fetchCurrentWeatherData(initFetchCities[randomize])
+        fetchForecastWeatherData(initFetchCities[randomize])
+    }
+
+    onMounted(() => {
+        fetchCurrentWeatherData(initFetchCities[randomize])
+        fetchForecastWeatherData(initFetchCities[randomize])
+    })
+
     return {
         current,
         forecast,
@@ -47,15 +60,6 @@ export const useWeatherStore = defineStore('weatherStore', () => {
         forecastError,
         fetchCurrentWeatherData,
         fetchForecastWeatherData,
+        refreshDataWhenError,
     }
 })
-/* HTML: <div class="loader"></div> */
-// .loader {
-//     width: 50px;
-//     aspect-ratio: 1;
-//     border-radius: 50%;
-//     border: 8px solid;
-//     border-color: #000 #0000;
-//     animation: l1 1s infinite;
-//   }
-//   @keyframes l1 {to{transform: rotate(.5turn)}}

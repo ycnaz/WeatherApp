@@ -34,7 +34,7 @@ const selectLocation = (location) => {
 
 <template>
     <div class="w-full relative">
-      <input @input="fetchLocationHandler" type="text" v-model="city_name" placeholder="Search for cities..." :class="['peer bg-sky-600 bg-opacity-50 py-3 text-xl text-white placeholder:text-gray-200 border-none focus:border-none focus:ring-0 rounded-lg shadow-md w-full transition-all',{'rounded-es-none': suggestionListOpen}]">
+      <input @input="fetchLocationHandler" type="text" v-model="city_name" placeholder="Search for cities..." :class="['peer bg-sky-600 bg-opacity-35 py-3 text-xl text-white placeholder:text-gray-200 border-none focus:border-none focus:ring-0 rounded-lg shadow-md w-full transition-all',{'rounded-es-none': suggestionListOpen}]">
       <ul v-if="suggestions.length && !loading" class="peer-focus:flex hidden flex-col overflow-x-hidden bg-white rounded-b-lg shadow-md absolute">
         <li v-for="location in suggestions" :key="location.id" class="p-2 cursor-pointer hover:bg-gray-100" @mousedown.prevent="selectLocation(location.name)">
           {{ location.name }}, {{ location.region }}, {{ location.country }}

@@ -19,13 +19,13 @@ const formatHour = (rawTime) => {
 </script>
 
 <template>
-    <div class="flex flex-col bg-sky-600 bg-opacity-50 w-[1100px] overflow-x-scroll scrollbar scrollbar-thumb-sky-600 scrollbar-track-sky-800 overflow-y-hidden h-auto max-h-64 rounded-lg shadow-md py-5 text-white scroll-smooth">
-        <h1 class="pl-5">TODAY'S FORECAST</h1>
-        <div v-if="data" class="flex">
+    <div class="flex flex-col bg-sky-600 bg-opacity-35 max-w-[1100px] overflow-y-hidden h-auto max-h-64 px-5 rounded-lg shadow-md pt-5 text-white scroll-smooth">
+        <h1>TODAY'S FORECAST</h1>
+        <div v-if="data" class="flex overflow-x-scroll overflow-y-hidden scrollbar scrollbar-thumb-sky-200 pb-3">
             <div v-for="(hour, index) in data.forecast.forecastday[0].hour" :key="hour.time_epoch" :class="['flex flex-col w-32 h-40 flex-shrink-0 items-center justify-center hover:bg-sky-700 transition-all', index < data.forecast.forecastday[0].hour.length - 1 ? 'border-r border-white' : '']">
-                <span class="text-gray-300">{{ formatHour(hour.time) }}</span>
+                <span class="text-black">{{ formatHour(hour.time) }}</span>
                 <img :src="hour.condition.icon">
-                <span class="text-4xl">{{ isCelsius ? hour.temp_c : hour.temp_f }}&deg;</span>
+                <span class="text-4xl">{{ Math.round(isCelsius ? hour.temp_c : hour.temp_f) }}&deg;</span>
                 <div class="group flex items-center relative">
                     <DropComp class="w-5 h-5" />
                     <span>{{ hour.chance_of_rain }}%</span>
