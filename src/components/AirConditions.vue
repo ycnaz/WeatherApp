@@ -17,7 +17,7 @@ const data = computed(() => weatherStore.current)
 </script>
 
 <template>
-    <div class="flex flex-col bg-sky-600 bg-opacity-35 p-5 rounded-lg shadow-md text-white mt-5 grow">
+    <div class="flex flex-col w-auto shrink bg-sky-600 bg-opacity-35 p-5 rounded-lg shadow-md text-white mt-5 grow">
         <div class="flex">
             <h1>AIR CONDITIONS</h1>
         </div>
