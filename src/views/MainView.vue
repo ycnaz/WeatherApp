@@ -25,13 +25,13 @@ const refreshData = () => {
 
 <template>
     <div v-if="data && !loading && !error" class="flex grow w-auto max-w-screen gap-x-5 ml-5">
-      <div class="flex flex-col grow shrink w-auto max-w-[1100px]">
+      <div class="flex flex-col grow shrink min-w-0 w-auto max-w-[1100px]">
         <SearchBar />
         <HeaderData />
         <TodayForecast />
         <AirConditions />
       </div>
-      <div class="flex flex-col grow gap-y-5">
+      <div class="flex flex-col max-w-[500px] grow gap-y-5">
         <ForecastComp />
         <AstroComp />
       </div>

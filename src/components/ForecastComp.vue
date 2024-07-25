@@ -17,7 +17,7 @@ const formatDate = (date) => {
 </script>
 
 <template>
-    <div class="flex grow w-auto max-w-[600px] min-w-[384px] h-auto max-h-96 bg-sky-600 bg-opacity-35 rounded-lg shadow-md text-white">
+    <div class="flex grow w-auto max-w-full min-w-[384px] h-auto max-h-96 bg-sky-600 bg-opacity-35 rounded-lg shadow-md text-white">
         <div class="flex flex-col w-full h-full p-5">
             <h1>3-DAY FORECAST</h1>
             <div v-if="data" class="flex flex-col grow">
