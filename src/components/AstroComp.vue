@@ -13,9 +13,9 @@ const data = computed(() => weatherStore.forecast)
 </script>
 
 <template>
-    <div class="bg-sky-600 bg-opacity-35 flex flex-col grow w-auto max-w-full min-w-[384px] h-auto rounded-lg p-5 shadow-md text-white">
+    <div class="bg-sky-600 bg-opacity-35 flex flex-col grow w-auto max-w-full sm:min-w-[384px] h-auto rounded-lg p-5 shadow-md text-white">
         <span>SUN/MOON</span>
-        <div class="flex flex-col h-full justify-around">
+        <div v-if="data" class="flex flex-col h-full justify-around">
             <div class="flex justify-around">
                 <div class="flex flex-col items-center">
                     <SunriseComp class="w-16 h-16"/>
