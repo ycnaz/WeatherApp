@@ -50,10 +50,3 @@
     </div>
   </div>
 </template>
-
-
-<!-- bg -->
-<!-- Photo by <a href="https://unsplash.com/@chuttersnap?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">CHUTTERSNAP</a> on <a href="https://unsplash.com/photos/white-clouds-under-blue-sky-w4WU2PZ9bPg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
-  
-<!-- Photo by <a href="https://unsplash.com/@nate_dumlao?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Nathan Dumlao</a> on <a href="https://unsplash.com/photos/aerial-photography-of-cloudy-sky-OHzkfrv9Ycw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
-  
