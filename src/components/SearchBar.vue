@@ -62,12 +62,12 @@ onUnmounted(() => {
           {{ location.name }}, {{ location.region }}, {{ location.country }}
         </li>
       </ul>
-      <div v-if="loading" class="flex items-center w-96 h-10 bg-white rounded-b-lg shadow-md absolute">
+      <div v-if="loading" class="flex items-center w-96 h-10 bg-white rounded-b-lg shadow-md absolute max-sm:w-full">
         <span class="p-2">
           Loading...
         </span>
       </div>
-      <div v-if="error && !loading" class="flex items-center w-96 h-10 bg-white rounded-b-lg shadow-md absolute">
+      <div v-if="error && !loading" class="flex items-center w-96 h-10 bg-white rounded-b-lg shadow-md absolute max-sm:w-full">
         <span class="p-2">
           {{ error }}
         </span>
