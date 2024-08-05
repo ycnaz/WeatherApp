@@ -19,10 +19,10 @@ const formatHour = (rawTime) => {
 </script>
 
 <template>
-    <div class="flex flex-col bg-sky-600 bg-opacity-35 w-full overflow-y-hidden h-56 px-5 rounded-lg shadow-md pt-5 shrink-0 text-white scroll-smooth medium:h-fit">
+    <div class="flex flex-col bg-sky-600 bg-opacity-35 w-full overflow-y-hidden h-56 px-5 rounded-lg shadow-md pt-5 shrink-0 text-white scroll-smooth">
         <h1>TODAY'S FORECAST</h1>
         <div v-if="data" class="flex overflow-x-scroll overflow-y-hidden scrollbar scrollbar-thumb-sky-200 pb-3">
-            <div v-for="(hour, index) in data.forecast.forecastday[0].hour" :key="hour.time_epoch" :class="['flex flex-col w-32 h-40 shrink-0 items-center justify-center hover:bg-sky-500 medium:h-36 transition-all', index < data.forecast.forecastday[0].hour.length - 1 ? 'border-r border-white' : '']">
+            <div v-for="(hour, index) in data.forecast.forecastday[0].hour" :key="hour.time_epoch" :class="['flex flex-col w-32 h-40 shrink-0 items-center justify-center hover:bg-sky-500 transition-all', index < data.forecast.forecastday[0].hour.length - 1 ? 'border-r border-white' : '']">
                 <span class="text-gray-300">{{ formatHour(hour.time) }}</span>
                 <img loading="lazy" :src="hour.condition.icon">
                 <span class="text-4xl">{{ Math.round(isCelsius ? hour.temp_c : hour.temp_f) }}&deg;</span>

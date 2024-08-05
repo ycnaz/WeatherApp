@@ -10,10 +10,6 @@ export default {
   ],
   theme: {
     extend: {
-      screens: {
-        'medium': { 'raw': '(max-height: 780px)' },
-        // 'small': { 'raw': '(max-height: 780px)' },
-      }
     },
   },
   plugins: [
